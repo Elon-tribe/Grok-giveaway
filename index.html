@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GrokGive — AI Trading & Giveaways (Demo)</title>
+  <meta name="description" content="Demo: GrokGive — community-driven AI trading & giveaway tracking. Signup, request a giveaway, admin approves & credits balance." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#">GrokGive</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#giveaway">Giveaway</a>
+        <a href="#plans">Plans</a>
+        <a id="nav-auth" href="#signup">Sign up / Log in</a>
+      </nav>
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1>GrokGive — AI trading + community giveaways</h1>
+          <p class="lead">Join a community-powered demo where AI-driven strategies, copy-trading ideas, and timed giveaways meet. Create an account, request a giveaway, and once an admin credits the award you can track your balance and transactions in your dashboard.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#signup">Create Account</a>
+            <a class="btn ghost" href="#giveaway">View Giveaway</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <!-- replace with your screenshot / illustration in assets/ -->
+          <div class="mock-term">GROK AI • DEMO DASHBOARD</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="wrap features">
+      <h2>What this demo shows</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>AI & Trading Ideas</h3>
+          <p>AI-mining and trading flavored UX for demo purposes — show AI-powered strategy results, schedules, and banners like modern AI-trading dashboards. (Inspiration: AI trading demo pages.)</p>
+          <small class="cite">Source inspiration: grok AI trading demo.  [oai_citation:1‡aitrading.grokprofit.net](https://aitrading.grokprofit.net/)</small>
+        </div>
+        <div class="card">
+          <h3>Community & Mission Voice</h3>
+          <p>A community-forward message area where mission, milestones and opportunity narratives live — useful when positioning giveaways as community rewards or promotions.</p>
+          <small class="cite">Inspired by community-driven copy style.  [oai_citation:2‡elontribe.org](https://www.elontribe.org/)</small>
+        </div>
+        <div class="card">
+          <h3>Plans, Copy-Trading Style</h3>
+          <p>Plan cards & product lists (copy-trading, assets, staking/crypto) so visitors see tiers and benefits in familiar broker style.</p>
+          <small class="cite">Layout & product ideas drawn from a broker-style landing page.  [oai_citation:3‡bullstakeinv.com](https://bullstakeinv.com/)</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIVEAWAY -->
+    <section id="giveaway" class="wrap giveaway">
+      <h2>Active Giveaway (Demo)</h2>
+      <p class="muted">Request a giveaway. Admins review requests and *approve* (credit) when payment is made — the user then sees the credited balance in their dashboard.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Available Giveaways</h3>
+          <ul id="giveaway-list">
+            <!-- populated by app.js -->
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Request Giveaway</h3>
+          <form id="request-giveaway-form">
+            <label>Email (must match your account):<input id="req-email" type="email" required /></label>
+            <label>Choose giveaway:
+              <select id="req-giveaway" required></select>
+            </label>
+            <label>Note (optional):<input id="req-note" type="text" /></label>
+            <div class="form-row">
+              <button class="btn primary" type="submit">Request Giveaway</button>
+              <small class="muted">Admin will review and approve (demo only).</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="wrap plans">
+      <h2>Demo Plans</h2>
+      <div class="grid-3">
+        <div class="card plan highlight">
+          <h4>Starter</h4>
+          <p class="price">$10 / mo</p>
+          <ul>
+            <li>Community signals</li>
+            <li>1 active strategy</li>
+            <li>Basic support</li>
+          </ul>
+        </div>
+        <div class="card plan">
+          <h4>Pro</h4>
+          <p class="price">$49 / mo</p>
+          <ul>
+            <li>Multi strategies</li>
+            <li>Priority support</li>
+            <li>Advanced analytics</li>
+          </ul>
+        </div>
+        <div class="card plan">
+          <h4>Enterprise</h4>
+          <p class="price">Contact</p>
+          <ul>
+            <li>White-label</li>
+            <li>Dedicated manager</li>
+            <li>Custom integrations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP / LOGIN -->
+    <section id="signup" class="wrap signup">
+      <h2>Create account / Log in</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>New user</h3>
+          <form id="signup-form">
+            <label>Full name<input id="su-name" required /></label>
+            <label>Email<input id="su-email" type="email" required /></label>
+            <label>Password<input id="su-pass" type="password" required /></label>
+            <div class="form-row">
+              <button class="btn primary" type="submit">Create account</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Existing user</h3>
+          <form id="login-form">
+            <label>Email<input id="li-email" type="email" required /></label>
+            <label>Password<input id="li-pass" type="password" required /></label>
+            <div class="form-row">
+              <button class="btn primary" type="submit">Log in</button>
+              <button type="button" id="btn-guest" class="btn ghost">Demo Guest</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD (hidden until login) -->
+    <section id="dashboard" class="wrap dashboard hidden">
+      <h2>Your Dashboard</h2>
+      <div class="dash-top">
+        <div>
+          <strong id="dash-name">Name</strong>
+          <p class="muted" id="dash-email">email</p>
+        </div>
+        <div class="dash-balance">
+          <span class="muted">Balance</span>
+          <div id="dash-balance" class="balance-amount">$0.00</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Transactions</h3>
+          <ul id="tx-list"></ul>
+        </div>
+
+        <div class="card">
+          <h3>Pending Giveaways</h3>
+          <ul id="my-pending-list"></ul>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <button id="btn-logout" class="btn ghost">Log out</button>
+      </div>
+    </section>
+
+    <!-- ADMIN PANEL (demo passcode required) -->
+    <section id="admin" class="wrap admin">
+      <h2>Admin (Demo)</h2>
+      <div class="card">
+        <p class="muted">Enter demo admin passcode to view pending giveaway requests and approve (this will credit user's demo balance locally).</p>
+        <form id="admin-auth-form">
+          <label>Admin passcode<input id="admin-pass" type="password" /></label>
+          <div class="form-row">
+            <button class="btn primary" type="submit">Enter Admin</button>
+            <small class="muted">Demo code: <code>grokadmin</code></small>
+          </div>
+        </form>
+      </div>
+
+      <div id="admin-panel" class="hidden">
+        <div class="card">
+          <h3>Pending Giveaway Requests</h3>
+          <ul id="admin-pending-list"></ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <strong>GrokGive (Demo)</strong>
+        <p class="muted">Demo site — not for real money. Replace copy, logos, and flows before any production use.</p>
+      </div>
+      <div class="muted small">Made for demo & design ideas</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
