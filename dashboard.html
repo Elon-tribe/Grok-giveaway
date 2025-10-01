@@ -1,38 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dashboard — Grok Giveaway</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Grok Giveaway</title>
+  <style>
+    body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#1e293b,#0f172a);margin:0;color:white;text-align:center;}
+    header{padding:1rem;background:rgba(0,0,0,.6);}
+    nav a{color:#38bdf8;margin:0 12px;text-decoration:none;font-weight:600;}
+    .card{margin:2rem auto;max-width:400px;background:rgba(255,255,255,0.1);padding:1.5rem;border-radius:12px;}
+    button{background:#38bdf8;color:white;border:none;border-radius:6px;padding:0.8rem 1.5rem;cursor:pointer;font-weight:600;margin-top:1rem;}
+    a{color:#38bdf8;}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <img src="assets/logo.svg" alt="Logo" class="logo">
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-      </nav>
-    </div>
+  <header>
+    <h2>Dashboard</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="login.html">Login</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
   </header>
-
-  <div class="dashboard container">
-    <h1>Your Account</h1>
-    <p><b>Welcome, <span id="userName"></span></b></p>
-    <div class="balance-card">
-      <h2>Balance: $<span id="balance"></span></h2>
-      <button class="btn-primary" onclick="window.location.href='https://t.me/ClaimCenterMusk001'">
-        Withdraw via Telegram
-      </button>
-    </div>
-    <div class="history">
-      <h3>Recent Activity</h3>
-      <ul id="historyList"></ul>
-    </div>
-    <button class="btn-outline" onclick="logout()">Logout</button>
+  <div class="card">
+    <h3 id="welcome"></h3>
+    <p>Your Balance: <strong id="balance">$0</strong></p>
+    <button onclick="completeTask()">Complete Task (+$5,000)</button>
+    <p><a href="https://t.me/ClaimCenterMusk001">Withdraw via Telegram</a></p>
   </div>
-
-  <script src="app.js"></script>
+  <script>
+    let user=JSON.parse(localStorage.getItem("user"));
+    if(user){
+      document.getElementById("welcome").innerText="Welcome, "+user.username+"!";
+      document.getElementById("balance").innerText="$"+user.balance.toLocaleString();
+    }else{
+      window.location.href="login.html";
+    }
+    function completeTask(){
+      user.balance+=5000;
+      localStorage.setItem("user",JSON.stringify(user));
+      document.getElementById("balance").innerText="$"+user.balance.toLocaleString();
+      alert("Task completed! $5,000 credited.");
+    }
+  </script>
 </body>
 </html>
