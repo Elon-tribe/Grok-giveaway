@@ -3,19 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Grok Giveaway</title>
+  <title>TribeX – Dashboard</title>
   <style>
-    body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#1e293b,#0f172a);margin:0;color:white;text-align:center;}
-    header{padding:1rem;background:rgba(0,0,0,.6);}
-    nav a{color:#38bdf8;margin:0 12px;text-decoration:none;font-weight:600;}
-    .card{margin:2rem auto;max-width:400px;background:rgba(255,255,255,0.1);padding:1.5rem;border-radius:12px;}
-    button{background:#38bdf8;color:white;border:none;border-radius:6px;padding:0.8rem 1.5rem;cursor:pointer;font-weight:600;margin-top:1rem;}
-    a{color:#38bdf8;}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      margin: 0;
+      color: #38bdf8;
+    }
+    nav a {
+      margin-left: 1.2rem;
+      text-decoration: none;
+      color: #f1f5f9;
+      font-weight: 500;
+    }
+    nav a:hover { color: #38bdf8; }
+
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .dashboard-card {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 25px rgba(56,189,248,0.25);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dashboard-card h2 {
+      margin-bottom: 0.5rem;
+      color: #38bdf8;
+    }
+    .dashboard-card p {
+      margin: 0.2rem 0 1.5rem;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .balance-box {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      padding: 1.5rem;
+      border-radius: 14px;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 25px rgba(14,165,233,0.4);
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-task {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(22,163,74,0.5);
+    }
+    .btn-task:hover { background: linear-gradient(135deg, #16a34a, #15803d); }
+
+    .btn-withdraw {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(217,119,6,0.5);
+    }
+    .btn-withdraw:hover { background: linear-gradient(135deg, #d97706, #b45309); }
+
+    footer {
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+    .contacts {
+      margin-top: 1rem;
+    }
+    .contacts a {
+      margin: 0 0.5rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contacts a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h2>Dashboard</h2>
+    <h1>🚀 TribeX Dashboard</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="signup.html">Sign Up</a>
@@ -23,26 +136,64 @@
       <a href="dashboard.html">Dashboard</a>
     </nav>
   </header>
-  <div class="card">
-    <h3 id="welcome"></h3>
-    <p>Your Balance: <strong id="balance">$0</strong></p>
-    <button onclick="completeTask()">Complete Task (+$5,000)</button>
-    <p><a href="https://t.me/ClaimCenterMusk001">Withdraw via Telegram</a></p>
+
+  <!-- Main -->
+  <div class="container">
+    <div class="dashboard-card">
+      <h2>Welcome, <span id="username"></span> 👋</h2>
+      <p>Email: <span id="email"></span></p>
+      
+      <div class="balance-box">
+        Balance: $<span id="balance"></span>
+      </div>
+
+      <button class="btn btn-task" id="taskBtn">✅ Complete Task & Earn $5000</button>
+      <button class="btn btn-withdraw" id="withdrawBtn">💸 Withdraw Funds</button>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 TribeX Community. Empowered by Elon Tribe & Grok AI.</p>
+    <div class="contacts">
+      <a href="https://t.me/MrMuskpersonal">Elon Musk Contact</a> |
+      <a href="https://t.me/+NmNUZB0uTjszYWUx">Giveaway Channel</a> |
+      <a href="https://t.me/ClaimCenterMusk001">Claim Center</a> |
+      <a href="https://wa.me/18166298499">WhatsApp Support</a>
+    </div>
+  </footer>
+
   <script>
-    let user=JSON.parse(localStorage.getItem("user"));
-    if(user){
-      document.getElementById("welcome").innerText="Welcome, "+user.username+"!";
-      document.getElementById("balance").innerText="$"+user.balance.toLocaleString();
-    }else{
-      window.location.href="login.html";
+    let user = JSON.parse(localStorage.getItem('tribeX_user'));
+    let loggedIn = localStorage.getItem('tribeX_loggedin');
+
+    if(!loggedIn || !user){
+      alert("Please login first!");
+      window.location.href = "login.html";
     }
-    function completeTask(){
-      user.balance+=5000;
-      localStorage.setItem("user",JSON.stringify(user));
-      document.getElementById("balance").innerText="$"+user.balance.toLocaleString();
-      alert("Task completed! $5,000 credited.");
-    }
+
+    document.getElementById('username').innerText = user.username;
+    document.getElementById('email').innerText = user.email;
+    document.getElementById('balance').innerText = user.balance.toLocaleString();
+
+    // Task button
+    document.getElementById('taskBtn').addEventListener('click', function(){
+      if(!user.taskCompleted){
+        user.balance += 5000;
+        user.taskCompleted = true;
+        localStorage.setItem('tribeX_user', JSON.stringify(user));
+        document.getElementById('balance').innerText = user.balance.toLocaleString();
+        alert("Task completed ✅ You earned $5000 bonus!");
+        window.open("https://t.me/+NmNUZB0uTjszYWUx", "_blank");
+      } else {
+        alert("You have already completed the task ✅");
+      }
+    });
+
+    // Withdraw button
+    document.getElementById('withdrawBtn').addEventListener('click', function(){
+      window.open("https://t.me/ClaimCenterMusk001", "_blank");
+    });
   </script>
 </body>
 </html>
