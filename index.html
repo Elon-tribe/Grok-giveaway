@@ -3,22 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grok x Elon Tribe Giveaway</title>
+  <title>TribeX – Global Community Giveaway</title>
   <style>
-    body {font-family: 'Segoe UI',sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:#f1f5f9;margin:0;}
-    header {text-align:center;padding:1.5rem;background:rgba(0,0,0,.6);}
-    nav a {color:#38bdf8;margin:0 12px;text-decoration:none;font-weight:600;}
-    .hero {text-align:center;padding:4rem 1rem;}
-    .hero h2 {font-size:2rem;color:#38bdf8;}
-    .stats {display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:2rem;}
-    .stat {background:rgba(255,255,255,0.1);padding:1.5rem;border-radius:12px;flex:1 1 200px;text-align:center;}
-    footer {text-align:center;padding:1rem;background:rgba(0,0,0,.7);}
-    footer a{color:#38bdf8;}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+    }
+
+    /* Header */
+    header {
+      padding: 1rem 2rem;
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      margin: 0;
+      color: #38bdf8;
+    }
+    nav a {
+      margin-left: 1.2rem;
+      text-decoration: none;
+      color: #f1f5f9;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Container */
+    .container {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* Balance */
+    .balance {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 25px rgba(56,189,248,0.25);
+      margin-bottom: 2rem;
+    }
+    .balance h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: #38bdf8;
+    }
+    .counter {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #facc15;
+      text-shadow: 0 0 12px rgba(250, 204, 21, 0.8);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #fff !important;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(14,165,233,0.5);
+      transition: all 0.25s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(14,165,233,0.7);
+    }
+
+    /* Info Sections */
+    .highlights {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .highlight {
+      background: #111827;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+    .highlight h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: #facc15;
+    }
+
+    /* About Company */
+    .about {
+      margin-top: 3rem;
+      background: #0f172a;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      text-align: left;
+    }
+    .about h2 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>Grok x Elon Tribe Giveaway</h1>
+    <h1>🚀 TribeX</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="signup.html">Sign Up</a>
@@ -26,23 +138,70 @@
       <a href="dashboard.html">Dashboard</a>
     </nav>
   </header>
-  <section class="hero">
-    <h2>AI Trading Meets Musk’s Vision 🚀</h2>
-    <p>Total Balance: <strong>$2,000,000</strong></p>
-    <p>Recent Giveaway: <strong>$5,800</strong></p>
-    <p>Signup Bonus: <strong>$1,000</strong></p>
-  </section>
-  <section class="stats">
-    <div class="stat"><h3>📊 AI Trading</h3><p>Stocks, crypto, and Musk’s companies (SpaceX, Neuralink, xAI).</p></div>
-    <div class="stat"><h3>🎁 Bonuses</h3><p>$1k signup, $5k tasks, instant rewards.</p></div>
-    <div class="stat"><h3>💸 Withdraw</h3><p>Withdraw via <a href="https://t.me/ClaimCenterMusk001">Telegram</a>.</p></div>
-  </section>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="balance">
+      <h3>💰 Current Giveaway Pool</h3>
+      <div class="counter" id="balance">$0</div>
+      <p>Last reward: <span style="color:#38bdf8">$5,800</span> • Signup Bonus: <span style="color:#38bdf8">$1,000</span></p>
+      <a id="claimBtn" href="signup.html" class="btn-primary">🎁 Claim Your Bonus</a>
+    </div>
+
+    <div class="highlights">
+      <div class="highlight">
+        <h4>🎁 Welcome Bonus</h4>
+        <p>Every new member of TribeX receives <strong>$1,000</strong> instantly — our way of saying welcome to the tribe.</p>
+      </div>
+      <div class="highlight">
+        <h4>✅ Complete Tasks</h4>
+        <p>Earn <strong>$5,000</strong> for completing simple community actions that spread awareness about Grok AI, Neuralink, and Starlink.</p>
+      </div>
+      <div class="highlight">
+        <h4>📤 Withdraw Easily</h4>
+        <p>Claim your payouts directly via our <a href="https://t.me/ClaimCenterMusk001" style="color:#38bdf8;">Telegram Claim Center</a> — fast and secure.</p>
+      </div>
+    </div>
+
+    <!-- About TribeX Section -->
+    <div class="about">
+      <h2>About TribeX</h2>
+      <p><strong>TribeX</strong> is a global community-driven initiative inspired by the vision of Elon Musk and his groundbreaking companies. We believe in rewarding participation, encouraging collaboration, and building bridges between technology and humanity.</p>
+      <p>Our mission is to support awareness and adoption of innovations such as <em>Neuralink</em>, <em>Starlink</em>, <em>Tesla</em>, <em>SpaceX</em>, and <em>Grok AI</em>. By bringing together Musk’s supporters worldwide, TribeX amplifies voices and actions that shape the future.</p>
+      <p>Members of TribeX don’t just earn rewards — they become part of a living movement. Every task completed, every signup, and every contribution helps power a larger purpose: accelerating progress through community strength.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>
-      <a href="https://t.me/MrMuskpersonal">Elon Telegram</a> | 
-      <a href="https://t.me/+NmNUZB0uTjszYWUx">Giveaway Channel</a> | 
-      <a href="https://wa.me/18166298499">WhatsApp</a>
-    </p>
+    <p>© 2025 TribeX Community • Not an exchange, but a movement.</p>
   </footer>
+
+  <script>
+    // Animate balance
+    function animateValue(id, start, end, duration) {
+      let obj = document.getElementById(id);
+      let range = end - start;
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        let progress = Math.min((timestamp - startTime) / duration, 1);
+        obj.innerHTML = "$" + Math.floor(progress * range + start).toLocaleString();
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      }
+      window.requestAnimationFrame(step);
+    }
+    animateValue("balance", 0, 2000000, 2500);
+
+    // Claim button login check
+    let isLoggedIn = localStorage.getItem("tribeX_loggedin");
+    const claimBtn = document.getElementById("claimBtn");
+    if (isLoggedIn) {
+      claimBtn.href = "https://t.me/ClaimCenterMusk001";
+      claimBtn.innerText = "🎉 Claim $1,000 Now";
+    }
+  </script>
 </body>
 </html>
